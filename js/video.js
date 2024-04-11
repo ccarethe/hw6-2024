@@ -31,7 +31,7 @@ document.querySelector("#slider").addEventListener("click", function() {
 	let new_volume = document.querySelector("#slider").value
 	video.volume = new_volume / 100;
 	// Update "Volume is..." indicator
-	document.querySelector("#volume").innerHTML = new_volume;
+	document.querySelector("#volume").innerHTML = new_volume + "%";
 })
 
 // Slow down video by 10% each time button is clicked
