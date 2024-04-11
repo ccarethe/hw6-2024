@@ -20,7 +20,7 @@ document.querySelector("#play").addEventListener("click", function() {
 		video.volume = volume_value / 100;
 		// Update volume information on slider and "Volume is..." indicator
 		volume_slider = document.querySelector("#slider").value = volume_value;
-		document.querySelector("#volume").innerHTML = volume_value;
+		document.querySelector("#volume").innerHTML = volume_value + "%";
 		console.log("Volume updated.")
 	}
 	// Play video
