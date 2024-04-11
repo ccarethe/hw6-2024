@@ -8,16 +8,26 @@ window.addEventListener("load", function() {
 
 });
 
+// Variable to keep track of how many times the "Play Video" button has been clicked
+let play_tracker = 0
+
 // Play video and update video volume when user clicks "Play Video" button
 document.querySelector("#play").addEventListener("click", function() {
-	// Update volume value to 50% upon playing video
-	let volume_value = 50
-	video.volume = volume_value / 100;
+	// If button has first been clicked, update volume value
+	if (play_tracker == 0) {
+		// Update volume value to 50% upon playing video
+		let volume_value = 100
+		video.volume = volume_value / 100;
+		// Update volume information on slider and "Volume is..." indicator
+		volume_slider = document.querySelector("#slider").value = volume_value;
+		document.querySelector("#volume").innerHTML = volume_value;
+		console.log("Volume updated.")
+	}
 	// Play video
 	video.play();
-	// Update volume information on slider and "Volume is..." indicator
-	volume_slider = document.querySelector("#slider").value = volume_value;
-	document.querySelector("#volume").innerHTML = volume_value;
+	// Update tracker
+	play_tracker++;
+	console.log(play_tracker);
 });
 
 // Pause video when user interacts with "Pause Video" button
